@@ -87,16 +87,16 @@ export default function QuizPage() {
         <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md text-center">
           <h1 className="text-2xl font-bold text-purple-700">🎉 Quiz Bitti!</h1>
           <p className="mt-4 text-lg text-black">Tüm kelimeleri tamamladın 👏</p>
-  
+
           <p className="mt-4 text-green-600 font-semibold">✅ Doğru: {correctCount}</p>
-  
+
           <button
             onClick={() => setShowWrong(!showWrong)}
             className="mt-2 text-red-600 font-semibold underline hover:text-red-800"
           >
             ❌ Yanlış: {wrongCount}
           </button>
-  
+
           {showWrong && wrongAnswers.length > 0 && (
             <div className="mt-6 text-left bg-gray-50 p-4 rounded-lg shadow-inner max-h-60 overflow-y-auto">
               <h2 className="font-bold text-red-600 mb-2">Yanlış Yaptıkların:</h2>
@@ -111,12 +111,14 @@ export default function QuizPage() {
               </ul>
             </div>
           )}
-  
+
           {/* ✅ Butonlar */}
           <div className="flex justify-center gap-4 mt-6">
             {/* Anasayfa */}
-            <BackButton />
-  
+            <div className="flex-1">
+              <BackButton />
+            </div>
+
             {/* Tekrar Quiz Yap */}
             <button
               onClick={() => {
@@ -130,7 +132,7 @@ export default function QuizPage() {
                 setWrongAnswers([]);
                 setShowWrong(false);
               }}
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md transition"
+              className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md transition"
             >
               🔄 Tekrar Quiz Yap
             </button>
