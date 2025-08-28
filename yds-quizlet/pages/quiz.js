@@ -111,8 +111,29 @@ export default function QuizPage() {
             </div>
           )}
   
-          {/* ✅ Anasayfa butonu */}
-          <BackButton />
+          {/* ✅ Butonlar */}
+          <div className="flex justify-center gap-4 mt-6">
+            {/* Anasayfa */}
+            <BackButton />
+  
+            {/* Tekrar Quiz Yap */}
+            <button
+              onClick={() => {
+                const order = shuffleArray(words.map((_, idx) => idx));
+                setQuizOrder(order);
+                setCurrentIndex(0);
+                generateQuestion(words, order[0]);
+                setFinished(false);
+                setCorrectCount(0);
+                setWrongCount(0);
+                setWrongAnswers([]);
+                setShowWrong(false);
+              }}
+              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md transition"
+            >
+              🔄 Tekrar Quiz Yap
+            </button>
+          </div>
         </div>
       </div>
     );
