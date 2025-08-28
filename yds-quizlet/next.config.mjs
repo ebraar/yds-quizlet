@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   eslint: {
+    // 🚀 Build sırasında ESLint hatalarını yok say
     ignoreDuringBuilds: true,
   },
 };
