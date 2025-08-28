@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import BackButton from "../components/BackButton";
 
 export default function QuizPage() {
   const [words, setWords] = useState([]);
